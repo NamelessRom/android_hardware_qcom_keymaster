@@ -13,6 +13,10 @@ keymaster-def += -D_ION_HEAP_MASK_COMPATIBILITY_WA
 endif
 endif
 
+ifeq ($(BOARD_FORCE_ION_HEAP_MASK_COMPATIBILITY),true)
+keymaster-def += -D_ION_HEAP_MASK_COMPATIBILITY_WA
+endif
+
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := keystore.$(TARGET_BOARD_PLATFORM)
